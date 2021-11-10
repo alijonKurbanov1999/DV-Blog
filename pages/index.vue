@@ -3,19 +3,37 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <posts-list/>
+    <posts-list :posts="loadedPosts"/>
   </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
-import PostsList from "../components/posts/PostsList";
+import PostsList from "@/components/posts/PostsList";
 
 export default {
   components: {
     PostsList,
     Logo
+  },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
   }
+  // asyncData(context, callback) {
+  //   // console.log('The context: ', context.store)
+  //   setTimeout(() => {
+  //     callback(null, {
+  //       loadedPosts: [
+  //         {id: '1', title: 'The title', preview: 'The preview', img: '1.png'},
+  //         {id: '2', title: 'The title', preview: 'The preview', img: '4.jpg'},
+  //         {id: '3', title: 'The title', preview: 'The preview', img: '1.png'},
+  //         {id: '4', title: 'The title', preview: 'The preview', img: '1.png'}
+  //       ]
+  //     })
+  //   }, 2500)
+  // },
 }
 </script>
 

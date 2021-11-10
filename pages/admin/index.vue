@@ -9,7 +9,7 @@
     </section>
     <section class="existing-posts">
       <h1>Existing Posts</h1>
-      <posts-list isAdmin/>
+      <posts-list isAdmin :posts="loadedPosts"/>
     </section>
   </div>
 </template>
@@ -22,6 +22,11 @@ export default {
   layout: 'admin',
   name: "index",
   components: {AppButton, PostsList},
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
+  },
   methods: {
     createPost() {
       this.$router.push('/admin/new-post')

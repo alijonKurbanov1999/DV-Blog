@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="Save">
-    <AppControlInput v-model="editedPost.name">Author name</AppControlInput>
+    <AppControlInput v-model="editedPost.author">Author name</AppControlInput>
     <AppControlInput v-model="editedPost.title">Title</AppControlInput>
     <AppControlInput v-model="editedPost.thumbnail">Thumbnail link</AppControlInput>
     <label>Content</label>
@@ -30,7 +30,7 @@ export default {
   data () {
     return {
       editedPost: this.loadingPost? {...this.loadingPost} :{
-        name: '',
+        author: '',
         title: '',
         thumbnail:'',
         content: ''
@@ -39,14 +39,16 @@ export default {
   },
   methods: {
     Save () {
-      console.log('name: ', this.editedPost.name)
+      this.$emit('save', this.editedPost)
+      this.back()
+      console.log('name: ', this.editedPost.author)
       console.log('title: ', this.editedPost.title)
       console.log('link: ', this.editedPost.thumbnail)
       console.log('content: ', this.editedPost.content)
       console.log('successfully!')
     },
     back () {
-      this.$router.push('/admin')
+      this.$router.push('/admin', this.editedPost)
     }
   }
 }

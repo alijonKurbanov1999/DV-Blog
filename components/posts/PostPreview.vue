@@ -4,12 +4,12 @@
       <article class="post-preview">
         <div
           class="post-thumbnail"
-          :style="{'background-image': 'url('+ require('../../assets/img/'+ url) +')'}"
+          :style="{'background-image': 'url('+ require('../../assets/img/'+ thumbnail) +')'}"
         >
         </div>
         <div class="post-content">
-          <h1>Post title {{ id }}</h1>
-          <p>Preview text {{ id }}</p>
+          <h1>{{ title }}</h1>
+          <p>{{ content }}</p>
         </div>
       </article>
     </nuxt-link>
@@ -24,7 +24,15 @@ export default {
       type: String,
       required: true
     },
-    url: {
+    thumbnail: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    content: {
       type: String,
       required: true
     },

@@ -1,6 +1,6 @@
 # nuxt-course
 
-> Nuxt.js course for Udemy
+> Nuxt.js course for frontend developers
 
 ## Build Setup
 

@@ -1,19 +1,31 @@
 <template>
   <div class="single-post-page">
     <section class="post">
-      <h1 class="post-title">Title of the Post</h1>
+      <h1 class="post-title">{{ loadedPosts.title }} </h1>
       <div class="post-details">
-        <div class="post-detail">Last updated on XXX</div>
-        <div class="post-detail">Written by NAME</div>
+        <div class="post-detail">Last updated on {{ loadedPosts.updatedDate }}</div>
+        <div class="post-detail">Written by NAME {{loadedPosts.author }}</div>
       </div>
-      <p class="post-content">Content of the post</p>
+      <p class="post-content">Content of the post:  {{ loadedPosts.content }}</p>
     </section>
     <section class="post-feedback">
       <p>Let me know what you think about the post, send a mail to <a href="mailto:feedback@my-awesome-domain.com">feedback@my-awesome-domain.com</a>.</p>
     </section>
   </div>
 </template>
+<script>
+import axios from "axios";
 
+export default {
+  asyncData(context) {
+    return axios.get(`https://resume-project-17900-default-rtdb.firebaseio.com/posts/${context.route.params.id}.json`)
+      .then(res => {
+        return { loadedPosts: res.data }
+      })
+      .catch(er => console.log('ERROR: ', context.error))
+  }
+}
+</script>
 <style scoped>
 .single-post-page {
   padding: 30px;

@@ -1,19 +1,13 @@
 <template>
   <section class="featured-posts">
     <post-preview
-      id="1"
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
+      :title="post.title"
+      :content="post.content"
+      :thumbnail="post.thumbnail"
       :post="isAdmin"
-      url="4.jpg"
-    />
-    <post-preview
-      id="2"
-      :post="isAdmin"
-      url="1.png"
-    />
-    <post-preview
-      id="3"
-      :post="isAdmin"
-      url="4.jpg"
     />
   </section>
 </template>
@@ -30,6 +24,10 @@ export default {
     isAdmin: {
       type: Boolean,
       default: false
+    },
+    posts: {
+      type: Array,
+      required: true
     }
   }
 }

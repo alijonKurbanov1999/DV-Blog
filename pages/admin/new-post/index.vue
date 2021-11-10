@@ -1,12 +1,13 @@
 <template>
   <div class="admin-new-post-page">
     <section class="new-post-form">
-      <AdminPostForm/>
+      <AdminPostForm @save="SubmitData"/>
     </section>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import AdminPostForm from "@/components/admin/AdminPostForm";
 
 export default {
@@ -15,12 +16,13 @@ export default {
   components: {
     AdminPostForm
   },
-  // props: {
-  //   posts: {
-  //     type: Boolean,
-  //     default:
-  //   }
-  // },
+  methods: {
+    SubmitData(postData) {
+      axios.post('https://resume-project-17900-default-rtdb.firebaseio.com/posts.json', {...postData, updatedDate: new Date()})
+        .then( el => console.log('result: ', el))
+        .catch(error => console.error('Ошибкa: ', error))
+    }
+  }
 }
 </script>
 
