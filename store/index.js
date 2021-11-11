@@ -20,7 +20,7 @@ const createStore = () => {
     },
     actions: {
       nuxtServerInit(vuexcommit, context) {
-        return axios.get('https://resume-project-17900-default-rtdb.firebaseio.com/posts.json')
+        return axios.get(process.env.baseUrl + '/posts.json')
           .then(res => {
             const postArray = []
             for (const key in res.data) {
@@ -32,7 +32,7 @@ const createStore = () => {
       },
       addPost(vuexcontext, postData) {
         const addPost = {...postData, updatedDate: new Date()}
-        return axios.post('https://resume-project-17900-default-rtdb.firebaseio.com/posts.json', addPost)
+        return axios.post(process.env.baseUrl + '/posts.json', addPost)
           .then(res =>
           {
             vuexcontext.commit('addPost', {...addPost, id: res.data.name})
@@ -40,7 +40,7 @@ const createStore = () => {
           .catch(error => console.error('Ошибкa: ', error))
       },
       editPosts(vuexcontext, editData) {
-        return axios.put(`https://resume-project-17900-default-rtdb.firebaseio.com/posts/${editData.id}.json`, editData)
+        return axios.put(`${process.env.baseUrl}/posts/${editData.id}.json`, editData)
           .then(res => {
             vuexcontext.commit('editPost', editData)
           })

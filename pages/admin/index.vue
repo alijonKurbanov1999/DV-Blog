@@ -15,13 +15,9 @@
 </template>
 
 <script>
-import PostsList from "../../components/posts/PostsList";
-import AppButton from "../../components/UI/AppButton";
-
 export default {
   layout: 'admin',
   name: "index",
-  components: {AppButton, PostsList},
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts

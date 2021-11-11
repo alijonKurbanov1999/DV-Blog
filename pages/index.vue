@@ -9,11 +9,10 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
-import PostsList from "@/components/posts/PostsList";
+
 
 export default {
   components: {
-    PostsList,
     Logo
   },
   computed: {

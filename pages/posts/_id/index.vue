@@ -3,7 +3,7 @@
     <section class="post">
       <h1 class="post-title">{{ loadedPosts.title }} </h1>
       <div class="post-details">
-        <div class="post-detail">Last updated on {{ loadedPosts.updatedDate }}</div>
+        <div class="post-detail">Last updated on {{ loadedPosts.updatedDate | date}}</div>
         <div class="post-detail">Written by NAME {{loadedPosts.author }}</div>
       </div>
       <p class="post-content">Content of the post:  {{ loadedPosts.content }}</p>

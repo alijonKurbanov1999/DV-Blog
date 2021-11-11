@@ -23,7 +23,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#3B8070'},
 
   /*
   ** Global CSS
@@ -36,6 +36,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/core-components.js',
+    '~plugins/date-filter.js'
   ],
 
   /*
@@ -54,5 +56,9 @@ module.exports = {
     extend(config, ctx) {
 
     }
+  },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://resume-project-17900-default-rtdb.firebaseio.com'
   }
 }
