@@ -59,6 +59,7 @@ module.exports = {
   },
 
   env: {
-    baseUrl: process.env.BASE_URL || 'https://resume-project-17900-default-rtdb.firebaseio.com'
+    baseUrl: process.env.BASE_URL || 'https://resume-project-17900-default-rtdb.firebaseio.com',
+    baseIpiKey: process.env.API_KEY || 'AIzaSyCdqd2wcphE8Il5ISAGeJbUxeCJproXyLM'
   }
 }

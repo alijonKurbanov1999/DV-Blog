@@ -6,6 +6,9 @@
       >
         Create Post
       </app-button>
+      <app-button style="margin-left: 10px" @click="logOut">
+        Log out
+      </app-button>
     </section>
     <section class="existing-posts">
       <h1>Existing Posts</h1>
@@ -15,9 +18,12 @@
 </template>
 
 <script>
+import auth from "@/middleware/auth";
+
 export default {
-  layout: 'admin',
   name: "index",
+  middleware: 'auth',
+  layout: 'admin',
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts
@@ -26,6 +32,10 @@ export default {
   methods: {
     createPost() {
       this.$router.push('/admin/new-post')
+    },
+    logOut() {
+      this.$store.dispatch('logOut')
+      this.$router.push('/')
     }
   }
 }

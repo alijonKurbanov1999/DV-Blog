@@ -10,8 +10,9 @@
 import AdminPostForm from "@/components/admin/AdminPostForm";
 import axios from "axios";
 export default {
-  layout: 'admin',
   name: "index",
+  layout: 'admin',
+  middleware: 'auth',
   components: {AdminPostForm},
   asyncData(context) {
     return axios.get(`https://resume-project-17900-default-rtdb.firebaseio.com/posts/${context.route.params.postsId}.json`)
