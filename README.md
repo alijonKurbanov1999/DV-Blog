@@ -1,4 +1,4 @@
-# nuxt-course
+# JS Academy
 
 > Nuxt.js for frontend developers
 

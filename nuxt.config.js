@@ -29,7 +29,6 @@ module.exports = {
   ** Global CSS
   */
   css: [
-
   ],
 
   /*

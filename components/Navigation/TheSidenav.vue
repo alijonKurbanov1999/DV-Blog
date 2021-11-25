@@ -11,9 +11,10 @@
       <ul
         class="nav-list"
         @click="$emit('close')">
-        <li class="nav-item"><nuxt-link to="/posts">Blog</nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/about">About</nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/admin">Admin</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/">Главный</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/posts">Все статьи</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/about">О нас</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/admin">Админ</nuxt-link></li>
       </ul>
     </div>
   </transition>

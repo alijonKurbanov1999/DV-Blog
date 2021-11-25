@@ -1,7 +1,8 @@
 <template>
   <div class="home-page">
     <section class="intro">
-      <h1>Get the latest tech news!</h1>
+      <img class="intro__img" src="../assets/img/javascript-word-cloud.jpg" alt="javascript-word-cloud.img">
+      <div class="intro__background"></div>
     </section>
     <posts-list :posts="loadedPosts"/>
   </div>
@@ -38,32 +39,34 @@ export default {
 
 <style>
 .intro {
-  height: 300px;
+  height: 400px;
   position: relative;
-  padding: 30px;
+  text-align: center;
+  /*padding: 30px;*/
   box-sizing: border-box;
-  background-image: url("../assets/img/background.jpeg");
-  background-position: center;
-  background-size: cover;
+  /*background-image: url("../assets/img/javascript-word-cloud.jpg");*/
+  /*background-position: center;*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: 80%;*/
 }
-
-.intro h1 {
+.intro__img {
+  width: 100%;
+  height: 100%;
+}
+.intro__background {
   position: absolute;
-  top: 10%;
-  left: 5%;
-  width: 90%;
-  font-size: 1.5rem;
-  color: rgba(9, 126, 141, 0.87);
-  background-color: rgb(211, 211, 211);
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 3px 3px 3px #00afaf;
-  box-sizing: border-box;
-  border: 1px solid #00f8ff;
-
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #000000;
+  background-color: rgba(255, 164, 0, 0.3);
+  -webkit-box-shadow: inset 0px 0px 117px 91px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 117px 91px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 117px 91px rgba(0,0,0,0.75);
 }
-
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .intro h1 {
     font-size: 2rem;
   }

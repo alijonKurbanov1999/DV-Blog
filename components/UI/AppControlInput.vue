@@ -2,9 +2,10 @@
   <div class="input-control">
     <label><slot /></label>
     <input
-      v-if="controlType === 'input'"
+      v-if="controlType === 'input' || controlType === 'password'"
       v-bind="$attrs"
       :value="value"
+      :type="controlType"
       @input="$emit('input', $event.target.value)">
     <textarea
       v-if="controlType === 'textarea'"
@@ -33,6 +34,7 @@ export default {
 <style scoped>
 .input-control {
   margin: 10px 0;
+
 }
 
 .input-control label {
@@ -46,13 +48,14 @@ export default {
   width: 100%;
   box-sizing: border-box;
   font: inherit;
-  border: 1px solid #ccc;
+  border: 2px solid #000000;
+  background-color: rgba(0, 0, 0, 0.02);
   padding: 5px;
 }
 
 .input-control input:focus,
 .input-control textarea:focus {
-  background-color: #eee;
+  border: 2px solid #FFFFFFA3;
   outline: none;
 }
 </style>

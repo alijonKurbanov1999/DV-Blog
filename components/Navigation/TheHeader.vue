@@ -3,14 +3,15 @@
   <header class="the-header">
     <TheSideNavToggle @toggle="$emit('sidenavToggle')" />
     <div class="logo">
-      <nuxt-link to="/">WD BLOG</nuxt-link>
+      <nuxt-link to="/">JavaScript</nuxt-link>
     </div>
     <div class="spacer"></div>
     <div class="navigation-items">
       <ul class="nav-list">
-        <li class="nav-item"><nuxt-link to="/posts">Blog</nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/about">About</nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/admin">Admin</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/">Главный</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/posts">Все статьи</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/about">О нас</nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/admin">Админ</nuxt-link></li>
       </ul>
     </div>
   </header>
@@ -41,7 +42,14 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: black;
+  /*background-color: #FFA300FF;*/
+  background: -webkit-linear-gradient(0deg, rgb(0, 0, 0), rgb(254, 152, 0) 100%);
+  background: -moz-linear-gradient(0deg, rgb(0, 0, 0), rgb(254, 152, 0) 100%);
+  background: linear-gradient(0deg, rgb(0, 0, 0), rgb(254, 152, 0) 100%);
+
+  -webkit-box-shadow: 0px 30px 81px 36px rgba(0,0,0,0.53);
+  -moz-box-shadow: 0px 30px 81px 36px rgba(0,0,0,0.53);
+  box-shadow: 0px 30px 81px 36px rgba(0,0,0,0.53);
   z-index: 100;
   box-sizing: border-box;
   padding: 0 20px;
@@ -54,7 +62,10 @@ export default {
 
 .logo a {
   text-decoration: none;
-  color: white;
+  color: #000000FF;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 2rem;
 }
 
 .spacer {
@@ -84,12 +95,12 @@ export default {
 
 .nav-item a {
   text-decoration: none;
-  color: white;
+  font-weight: 900;
+  color: #000000FF;
+  font-size: 1.2rem;
 }
 
-.nav-item a:hover,
-.nav-item a:active,
-.nav-item a.nuxt-link-active {
-  color: red;
+.nav-item a:hover{
+  color: #b46c00;
 }
 </style>

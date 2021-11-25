@@ -3,8 +3,7 @@
     <AppControlInput v-model="editedPost.author">Author name</AppControlInput>
     <AppControlInput v-model="editedPost.title">Title</AppControlInput>
     <AppControlInput v-model="editedPost.thumbnail">Thumbnail link</AppControlInput>
-    <label>Content</label>
-    <AppControlInput controlType="textarea" v-model="editedPost.content"/>
+    <AppControlInput controlType="textarea" v-model="editedPost.content">Content</AppControlInput>
     <app-button type="submit" btnStyle="inverted" style="margin-right: 10px">Save</app-button>
     <app-button btnStyle="cancel" @click="back">Cancel</app-button>
   </form>

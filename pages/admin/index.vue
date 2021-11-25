@@ -4,14 +4,14 @@
       <app-button
         @click="createPost"
       >
-        Create Post
+        Создать пост
       </app-button>
       <app-button style="margin-left: 10px" @click="logOut">
-        Log out
+        Выйти
       </app-button>
     </section>
     <section class="existing-posts">
-      <h1>Existing Posts</h1>
+      <h1>Существующие пости</h1>
       <posts-list isAdmin :posts="loadedPosts"/>
     </section>
   </div>
@@ -44,6 +44,8 @@ export default {
 <style scoped>
 .admin-page {
   padding: 20px;
+  background-color: #ff9800;
+  background-image: linear-gradient(20deg, #ff9800 1%, #8b6422 42%, #000000 100%);
 }
 
 .new-post {
